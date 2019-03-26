@@ -40,7 +40,7 @@ document.addEventListener('click', e => {
   if (e.target.className === `animal`) {
     document.querySelector(`#gifDiv`).innerHTML = ``
     let animal = e.target.dataset.animal
-    fetch(`http://api.giphy.com/v1/gifs/search?q=${animal}&limit=10&rating=g&api_key=1oPtyo1in1NJiOUg24HKdYV5BMO9lJ5q`)
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${animal}&limit=10&rating=g&api_key=1oPtyo1in1NJiOUg24HKdYV5BMO9lJ5q`)
       .then(r => r.json())
       .then(({ data }) => {
         data.forEach(gif => {
