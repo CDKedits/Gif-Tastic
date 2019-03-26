@@ -4,15 +4,37 @@ let toggle = false
 
 const animalArr = [`cat`, `rabbit`, `turtle`, `dog`]
 
-for (let i = 0; i < animalArr.length; i++) {
-  let animalbtn = document.createElement(`button`);
-  animalbtn.textContent = animalArr[i];
-  animalbtn.className = `animal`;
-  animalbtn.setAttribute(`data-animal`, `${animalArr[i]}`);
-  document.querySelector(`#buttons`).append(animalbtn);
+document.querySelector(`#submit`).addEventListener(`click`, function (event) {
+  event.preventDefault()
+  let search = document.querySelector(`#search-term`).value
+  if (search.length > 0) {
+    let newBtn = `${search}`
+    console.log(newBtn)
+    animalArr.push(newBtn)
+    console.log(animalArr)
+    addBtn()
+    document.querySelector(`#search-term`).value = ``
+    document.querySelector(`#error`).innerHTML = ``
+  } else {
+    document.querySelector(`#error`).innerHTML = ``
+    let error = document.createElement(`p`)
+    error.textContent = "Please enter a valid search term"
+    document.querySelector(`#error`).append(error)
+  }
+})
+
+const addBtn = () => {
+  document.querySelector(`#buttons`).innerHTML = ``
+  for (let i = 0; i < animalArr.length; i++) {
+    let animalbtn = document.createElement(`button`);
+    animalbtn.textContent = animalArr[i];
+    animalbtn.className = `animal`;
+    animalbtn.setAttribute(`data-animal`, `${animalArr[i]}`);
+    document.querySelector(`#buttons`).append(animalbtn);
+  }
 }
 
-
+addBtn()
 
 document.addEventListener('click', e => {
   if (e.target.className === `animal`) {

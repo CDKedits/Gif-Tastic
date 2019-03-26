@@ -1,6 +1,7 @@
 body {
   width: 960px;
   margin: auto;
+  background-color: lightgray
 }
 
 #buttons {
@@ -13,26 +14,23 @@ body {
 }
 
 #gifDiv {
+  display: inline-block;
   width: 960px;
   margin-top: 10px;
-  display: inline-block;
 }
 
 .rating {
   margin: 10px;
 }
 
-img {
-  display: inline;
-}
-
 .container {
-  display: inline;
+  width: 960px;
 }
 
-form, label, input, #submit {
+form, label, input, #submit, #error {
   display: block;
   margin: auto;
+  margin-bottom: 10px;
   text-align: center;
 }
 
