@@ -1,0 +1,41 @@
+body {
+  width: 960px;
+  margin: auto;
+}
+
+#buttons {
+  margin-top: 10px;
+}
+
+.animal {
+  margin-left: 10px;
+  background-color: lightblue;
+}
+
+#gifDiv {
+  width: 960px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.rating {
+  margin: 10px;
+}
+
+img {
+  display: inline;
+}
+
+.container {
+  display: inline;
+}
+
+form, label, input, #submit {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+#submit {
+  background-color: lightblue;
+}
